@@ -85,8 +85,3 @@ public class EmployeeService {
 
 
 
-//
-//public String update(Employee employee) {
-//	HttpEntity<Employee> entity = new HttpEntity<>(employee);
-//	return restTemplate.exchange("http://localhost:8080/employee",HttpMethod.PUT,entity,String.class).getBody();
-//}
