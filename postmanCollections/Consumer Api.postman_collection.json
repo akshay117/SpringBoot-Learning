@@ -1,0 +1,109 @@
+{
+	"info": {
+		"_postman_id": "39112ab2-a774-4959-8267-fd7cca6ce272",
+		"name": "Consumer Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all Employee",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/employee-consumer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"employee-consumer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add an employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"5\",\r\n    \"name\": \"Akhil\",\r\n     \"salary\": 35665\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/employee-consumer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"employee-consumer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update By id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\" : \"5\",\r\n    \"name\": \"Mathew\",\r\n     \"salary\": 10000\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8083/employee-consumer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"employee-consumer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteByid",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8083/employee-consumer?id=56",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8083",
+					"path": [
+						"employee-consumer"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "56"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
