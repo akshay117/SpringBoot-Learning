@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "a7742d51-61b4-48d7-a3db-558b5e835703",
+		"name": "BooksApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List All Books from Json",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/books/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"books",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
