@@ -25,22 +25,21 @@ public class EmployeeController {
 	@PostMapping
 	public String saveEmployee(@RequestBody Employee employee) {
 		return employeeService.saveEmp(employee);
-		
-	}
+		}
 	
 	@GetMapping
 	public List<Employee> getAll(){
 		return employeeService.getEmp();
-	}
+	   }
 	
 	@DeleteMapping
 	public String deleteEmp(@RequestParam Integer id) {
 		return employeeService.deleteEmployee(id);
-	}
+	   }
 	
 	@PutMapping
 	public Employee update(@RequestBody Employee employee) {
 		return employeeService.updateEmployee(employee);
-	}
+	   }
 
 }

@@ -26,22 +26,23 @@ public class EmployeeService {
 
 	@Autowired
 	public EmployeeService(RestTemplateBuilder restTemplateBuilder) {
+		
         this.restTemplate = restTemplateBuilder.build();
 	}
 
 	public String saveEmp(Employee employee) {
+		
 		HttpEntity<Employee> entity = new HttpEntity<>(employee);
 		return restTemplate.exchange(firstApi,HttpMethod.POST,entity,String.class).getBody();
 	}
 	
-	
 	public List<Employee> getEmp(){
+		
 		return restTemplate.exchange (firstApi,HttpMethod.GET,null,List.class).getBody();
 	}
-
-	
 	
     public String deleteEmployee(Integer id) {
+    	
     	HttpEntity<Integer> entity = new HttpEntity<>(id);
         return restTemplate.exchange (firstApi +"?id="+id,HttpMethod.DELETE,entity,String.class).getBody();
     }
@@ -49,8 +50,7 @@ public class EmployeeService {
     public Employee updateEmployee(Employee employee) {
     	
     	HttpEntity<Employee> entity = new HttpEntity<>(employee);
-    	
-		return restTemplate.exchange(firstApi,HttpMethod.PUT,entity,Employee.class).getBody();
+    	return restTemplate.exchange(firstApi,HttpMethod.PUT,entity,Employee.class).getBody();
     	
     }
 
