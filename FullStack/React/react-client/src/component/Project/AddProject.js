@@ -14,9 +14,17 @@ class AddProject extends Component {
       description: "ProjectDescription ",
       startDate: "",
       endDate: "",
+      errors: {},
     };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  //life cycle hooks
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
   }
 
   onChange(e) {
@@ -37,6 +45,8 @@ class AddProject extends Component {
   }
 
   render() {
+    const { errors } = this.state;
+
     return (
       <div>
         <div className="project">
@@ -55,6 +65,7 @@ class AddProject extends Component {
                       value={this.state.projectName}
                       onChange={this.onChange}
                     />
+                    <p>{errors.projectName}</p>
 
                     <br></br>
                   </div>
@@ -67,6 +78,7 @@ class AddProject extends Component {
                       value={this.state.projectIdentifier}
                       onChange={this.onChange}
                     />
+                    <p>{errors.projectIdentifier}</p>
                   </div>
 
                   <br></br>
@@ -79,6 +91,7 @@ class AddProject extends Component {
                       value={this.state.description}
                       onChange={this.onChange}
                     ></textarea>
+                    <p>{errors.description}</p>
                   </div>
                   <br></br>
 
@@ -123,6 +136,11 @@ class AddProject extends Component {
 
 AddProject.propTypes = {
   createProject: PropTypes.func.isRequired,
+  errors: PropTypes.object.isRequired,
 };
 
-export default connect(null, { createProject })(AddProject);
+const mapStatetoProps = (state) => ({
+  errros: state.errors,
+});
+
+export default connect(mapStatetoProps, { createProject })(AddProject);
