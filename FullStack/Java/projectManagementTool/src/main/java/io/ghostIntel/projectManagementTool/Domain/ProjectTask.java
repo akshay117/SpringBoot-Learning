@@ -5,10 +5,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 @Entity
+@Transactional
 public class ProjectTask {
 
     @Id
