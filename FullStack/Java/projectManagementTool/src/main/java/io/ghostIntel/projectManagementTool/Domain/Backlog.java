@@ -4,6 +4,8 @@ package io.ghostIntel.projectManagementTool.Domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
+
 import java.util.ArrayList;
 import java.util.List;
 
